@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/recommended-project',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '057764fd25ae9b3c47b96a6863bb501750c02b20',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -196,6 +196,15 @@
             'reference' => '3.0.17',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../web/modules/contrib/blazy',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'drupal/bootstrap' => array(
+            'pretty_version' => '5.0.2',
+            'version' => '5.0.2.0',
+            'reference' => '5.0.2',
+            'type' => 'drupal-theme',
+            'install_path' => __DIR__ . '/../../web/themes/contrib/bootstrap',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -434,9 +443,9 @@
             'dev_requirement' => false,
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '057764fd25ae9b3c47b96a6863bb501750c02b20',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1187,6 +1196,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'twbs/bootstrap' => array(
+            'pretty_version' => 'v5.3.8',
+            'version' => '5.3.8.0',
+            'reference' => '25aa8cc0b32f0d1a54be575347e6d84b70b1acd7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'twig/html-extra' => array(
             'pretty_version' => 'v3.28.0',
             'version' => '3.28.0.0',
@@ -1204,6 +1222,12 @@
             'install_path' => __DIR__ . '/../twig/twig',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'twitter/bootstrap' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v5.3.8',
+            ),
         ),
     ),
 );

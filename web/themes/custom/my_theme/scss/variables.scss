@@ -1,0 +1,106 @@
+/* VARIABLES */
+
+$primary: #00372a;
+$primary-hover: #c2d500;
+$secondary: #d9e378;
+$secondary-hover: #21b592;
+$tertiary: #e4ecea;
+$tertiary-hover: #dbeae6;
+$warning: #ffcd39;
+$error: #b02a37;
+$dark: #212529;
+$light: #ffffff;
+$subtle: #495057;
+
+$font-family-base: "Codec Pro", sans-serif;
+
+//default
+$font-size-base: 1.125rem;
+$font-weight-base: 300;
+
+//bold
+$font-weight-bold: 800;
+
+//inline link
+$btn-link-color: #00372a;
+$link-text-decoration-style: solid;
+
+//list-mobile
+$list-font-size-mobile: 0.875rem;
+$list-line-height-mobile: 1.4;
+
+//normal headers
+$headings-font-weight: 600 !default;
+$h1-font-size: 4.75rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 1.6875rem;
+$h4-font-size: 1.4375rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+
+$display-font-sizes: (
+  1: 3.75rem,
+  2: 3rem,
+  3: 2.375rem,
+  4: 1.875rem,
+  5: 1.5rem,
+  6: 1.125rem,
+) !default;
+
+//quote
+$quote-text-size: 1.5625rem;
+
+//quote-mobile
+$quote-text-size-mobile: 1rem;
+$quote-line-height-mobile: 1.4;
+
+//date
+$date-size: 1rem;
+$date-size-mobile: 0.875rem;
+
+//menu-dropdown
+$dropdown-link-hover-bg: transparent;
+$dropdown-link-focus-bg: transparent;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.1875,
+  2: $spacer * 0.25,
+  3: $spacer * 0.5,
+  4: $spacer * 0.625,
+  5: $spacer * 0.9375,
+  6: $spacer,
+  7: $spacer * 1.25,
+  8: $spacer * 1.5,
+  9: $spacer * 1.875,
+  10: $spacer * 2.5,
+  11: $spacer * 3,
+  12: $spacer * 3.125,
+  13: $spacer * 6.25,
+) !default;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": #198754,
+  "info": #0dcaf0,
+  "warning": $warning,
+  "danger": $error,
+  "light": $light,
+  "dark": $dark,
+  "primary-h": $primary-hover,
+  "tertiary": $tertiary,
+  "tertiary-h": $tertiary-hover,
+) !default;
+
+// Comments (required by contrib/bootstrap/scss/components/comments.scss)
+$comment-spacer-x: 1.25em;
+$comment-spacer-y: 1.25em;
+$accent-light: tint-color($primary, 85%);
+$accent-dark: shade-color($primary, 12%);
+
+// Legacy shade/tint aliases (required by contrib/bootstrap/scss components: commerce, webform, user)
+$primary-shade: $secondary;
+$primary-light: tint-color($secondary, 37%);
+$primary-dark: shade-color($secondary, 12%);
