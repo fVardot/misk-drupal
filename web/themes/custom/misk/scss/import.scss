@@ -6,6 +6,8 @@
 @import "variables";
 // typography
 @import "typography";
+// fonts
+@import "fonts";
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
@@ -61,3 +63,9 @@
 @import "base";
 // Hero slider
 @import "hero-slider";
+// Leaders in the Making block
+@import "leaders-block";
+// Our Partners block
+@import "our-partners";
+// Statistics block
+@import "statistics";

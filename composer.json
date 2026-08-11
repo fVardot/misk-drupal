@@ -50,11 +50,17 @@
             "php-http/discovery": true,
             "php-tuf/composer-integration": true,
             "symfony/runtime": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
     "extra": {
+	"patches": {
+        	"drupal/core": {
+            		"Fix ArgumentCountError on bundle change in Add view wizard": "views_wizard_ajax_fix.patch"
+       		 }
+    	},
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
@@ -124,6 +130,7 @@
         }
     },
     "require-dev": {
+        "cweagans/composer-patches": "^2.0",
         "drupal/coder": "^9.0",
         "drupal/devel": "^5.5",
         "npm-asset/slick-carousel": "^2.0",

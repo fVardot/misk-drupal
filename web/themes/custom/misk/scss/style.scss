@@ -11,6 +11,11 @@ Description: Bootstrap 4 with Sass
 
 body {
     background: $body-bg;
+    // 100vw (used by the hero slider and leaders block full-bleed sections)
+    // includes the scrollbar's own width in most browsers, making full-bleed
+    // elements slightly wider than the viewport. This prevents the resulting
+    // horizontal scroll without affecting vertical scrolling.
+    overflow-x: hidden;
 }
 
 

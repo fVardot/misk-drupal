@@ -1,0 +1,35 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{% set entity = content['#block_content'] %}
+{% set image_first = entity is null or entity.field_image_first.isEmpty() or entity.field_image_first.value %}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+      <div class="container-fluid leaders-block mb-12 mb-sm-13">
+        <div class="row{{ image_first ? '' : ' flex-row-reverse' }}">
+          <div class="col-12 col-sm-4 leaders-block__image overflow-hidden px-0 h-100">
+            {{ content.field_media }}
+          </div>
+          <div class="col-12 col-sm-8 p-12 d-flex flex-column justify-content-center bg-primary position-relative">
+            <div class="container">
+              <div class="text-white">
+                {{ content.body }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ content|without('body', 'field_media', 'field_image_first') }}
+    </div>
+  {% endblock %}
+</div>

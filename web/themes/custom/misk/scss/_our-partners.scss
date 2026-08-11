@@ -1,0 +1,16 @@
+.partner-box {
+  // aspect-ratio: 1 keeps this a perfect square at any column width,
+  // instead of a fixed height that left it as a rectangle matching
+  // whatever width the grid column happened to compute to.
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

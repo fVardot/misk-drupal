@@ -1,0 +1,17 @@
+{
+    "_hash": "c620f07972b3cbeba8ea6a7b09ff52d51422bfd13eec4131cc4f66378c9e5bb2",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "Fix ArgumentCountError on bundle change in Add view wizard",
+                "url": "views_wizard_ajax_fix.patch",
+                "sha256": "ac1ae87ec13628c2da502e93af869c5c081f7b84096695cec5e2961f12f709cb",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

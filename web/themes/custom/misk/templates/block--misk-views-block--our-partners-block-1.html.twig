@@ -1,0 +1,30 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+      <div class="our-partners mb-12 mb-sm-13">
+        <div class="container pt-9">
+          {% if label %}
+            <h2{{ title_attributes.addClass('fw-semibold', 'text-center', 'mb-7', 'mb-sm-9') }}>{{ label }}</h2>
+          {% endif %}
+          <div class="row justify-content-center">
+            <div class="col-10 col-sm-8 col-md-6">
+              {{ content }}
+            </div>
+          </div>
+          <div class="text-center mb-7 mb-9">
+            <a href="#" class="btn btn-primary rounded-pill px-4 py-3 fw-semibold">Load More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</div>

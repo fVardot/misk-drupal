@@ -1,0 +1,37 @@
+diff --git a/core/modules/views/src/ViewsFormAjaxHelperTrait.php b/core/modules/views/src/ViewsFormAjaxHelperTrait.php
+index 359260c8a6192bd346b6c35e92ba4a2ff3f67b9b..1026e17a79e8c4aa5935cb8f24a440bb4e00272f 100644
+--- a/core/modules/views/src/ViewsFormAjaxHelperTrait.php
++++ b/core/modules/views/src/ViewsFormAjaxHelperTrait.php
+@@ -57,7 +57,7 @@ trait ViewsFormAjaxHelperTrait {
+   protected function addAjaxTrigger(array &$wrappingElement, string $triggerKey, array $refreshParents): void {
+     // Add the AJAX behavior to the triggering element.
+     $triggeringElement = &$wrappingElement[$triggerKey];
+-    $triggeringElement['#ajax']['callback'] = static::class . ':ajaxUpdateForm';
++    $triggeringElement['#ajax']['callback'] = static::class . '::ajaxUpdateForm';
+ 
+     // We do not use \Drupal\Component\Utility\Html::getUniqueId() to get an ID
+     // for the AJAX wrapper. It remembers IDs across AJAX requests (and won't
+@@ -222,7 +222,7 @@ public static function addAjaxWrapper(array $element, FormStateInterface $formSt
+    * @return array
+    *   Render array.
+    */
+-  public function ajaxUpdateForm(array $form, FormStateInterface $formState): array {
++  public static function ajaxUpdateForm(array $form, FormStateInterface $formState): array {
+     // The region that needs to be updated was stored in a property of the
+     // triggering element by self::addAjaxTrigger(), so all we have to do is
+     // retrieve that here.
+diff --git a/core/modules/views_ui/tests/src/FunctionalJavascript/ViewsWizardTest.php b/core/modules/views_ui/tests/src/FunctionalJavascript/ViewsWizardTest.php
+index 50fd38888c32af1d694cd575c27afbccc550f57b..c45b0297b8348ed6cc1f3082722ec7b4acab981e 100644
+--- a/core/modules/views_ui/tests/src/FunctionalJavascript/ViewsWizardTest.php
++++ b/core/modules/views_ui/tests/src/FunctionalJavascript/ViewsWizardTest.php
+@@ -95,6 +95,10 @@ public function testCreateViewWizard(): void {
+     $this->assertNotNull($page->findField('show[type]'), 'The "of type" filter is added for nodes when there is at least one node type.');
+     $this->assertEquals('fields', $page->findField('page[style][row_plugin]')->getValue(), 'The page display format was not changed from a valid value.');
+     $this->assertEquals('fields', $page->findField('block[style][row_plugin]')->getValue(), 'The block display format was not changed from a valid value.');
++
++    $page->selectFieldOption('show[type]', 'page');
++    $this->assertSession()->assertWaitOnAjaxRequest();
++    $this->assertSame('page', $page->findField('show[type]')->getValue());
+   }
+ 
+ }

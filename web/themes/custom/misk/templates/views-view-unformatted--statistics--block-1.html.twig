@@ -1,0 +1,7 @@
+<div class="flex-column flex-sm-row d-flex justify-content-around w-100">
+  {% for row in rows %}
+    <div{{ row.attributes.addClass(['d-flex', 'flex-column', 'align-items-center']) }}>
+      {{ row.content }}
+    </div>
+  {% endfor %}
+</div>
